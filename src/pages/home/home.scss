@@ -1,3 +1,23 @@
-page-home {
+page-home{
+    .home{
+        background-image: url("../assets/imgs/window.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+ 
+    .item{
+        background-color: rgba(255, 255, 255, 0.377);
+    }
 
+    .hero{
+        background-color: rgba(255, 144, 144, 0.466)
+    }
+
+    .south{
+        background-color: rgba(107, 199, 64, 0.226)
+    }
+
+    .science{
+        background-color: rgba(161, 211, 255, 0.438)
+    }
 }

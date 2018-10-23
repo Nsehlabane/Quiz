@@ -1,14 +1,228 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+  <ion-navbar color="grey">
+    <ion-title text-center>
+      CHOOSE A CATEGORY
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="home" padding>
+
+<div padding>
+  <ion-segment [(ngModel)]="quiz">
+    <ion-segment-button value="SuperHeroes">
+      Super Heroes
+    </ion-segment-button>
+    <ion-segment-button value="SouthAfrica">
+      South Africa
+    </ion-segment-button>
+    <ion-segment-button value="Science">
+      Science
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+
+<div [ngSwitch]="quiz">
+
+  <ion-list no-lines no padding *ngSwitchCase="'SuperHeroes'">
+    <ion-item class="hero">
+      SUPER HEORES
+    </ion-item > <br>
+    <ion-list>
+      <ion-item class="item">
+        <ion-label color="dark">Question 1: Which element is Superman's weakness?</ion-label>
+        <ion-select [(ngModel)]="SP1">
+          <ion-option>Zicronium</ion-option>
+          <ion-option >Mercury</ion-option>
+          <ion-option value="Kryptonite">Kryptonite</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item class="item">
+        <ion-label color="dark">Question 2: What super powers does Batman poses?</ion-label>
+        <ion-select [(ngModel)]="SP2">
+          <ion-option >Super speed </ion-option>
+          <ion-option value="None">None </ion-option>
+          <ion-option >Super strength</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    
+    <ion-list>
+      <ion-item class="item">
+        <ion-label color="dark">Question 3: Who's Iron man's artificial intelligence assistant after the birth of Vison? </ion-label>
+        <ion-select [(ngModel)]="SP3">
+          <ion-option value="Friday">Friday</ion-option>
+          <ion-option >Cortana</ion-option>
+          <ion-option >Jarvis</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item class="item">
+        <ion-label color="dark">Question 4: How long was Captain America frozen before he was found?</ion-label>
+        <ion-select [(ngModel)]="SP4">
+          <ion-option value="70">70</ion-option>
+          <ion-option> 110 </ion-option>
+          <ion-option > 118</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item class="item">
+        <ion-label color="dark">Question 5: Which material is the Black Panther's material made out of?</ion-label>
+        <ion-select [(ngModel)]="SP5">
+          <ion-option value="Vibranium">Vibranium</ion-option>
+          <ion-option>Titanium</ion-option>
+          <ion-option >Adamantium</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button full (click)="CalculateAll1()">Reslts</button>
+
+<ion-item  class="item" color="dark" ><p>{{TotalScore1}}</p></ion-item>
+  </ion-list>
+
+  <ion-list no-lines no padding *ngSwitchCase="'SouthAfrica'">
+    <ion-item class="south">
+      SOUTH AFRICA
+    </ion-item> <br>
+    <ion-list>
+      <ion-item>
+        <ion-label color="dark">Question 1: How many capital cities does South Africa have?</ion-label>
+        <ion-select [(ngModel)]="SA1">
+          <ion-option >1</ion-option>
+          <ion-option >2</ion-option>
+          <ion-option value="3">3</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-label color="dark">Question 2: How many official languages have?</ion-label>
+        <ion-select [(ngModel)]="SA2">
+          <ion-option >10</ion-option>
+          <ion-option value="11">11</ion-option>
+          <ion-option >12</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    
+    <ion-list>
+      <ion-item>
+        <ion-label color="dark">Question 3: How many provinces does South Africa have?</ion-label>
+        <ion-select [(ngModel)]="SA3">
+          <ion-option value="9">9</ion-option>
+          <ion-option>11</ion-option>
+          <ion-option>13</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-label color="dark">Question 4: South Africa has the most luxurious train in the world which is it?</ion-label>
+        <ion-select [(ngModel)]="SA4">
+          <ion-option>Shosholoza</ion-option>
+          <ion-option>Blue Train</ion-option>
+          <ion-option value="Rovos">Rovos Rail</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-label color="dark">Question 5: In what year did South Africa become a republic?</ion-label>
+        <ion-select [(ngModel)]="SA5">
+          <ion-option value="1961">1961</ion-option>
+          <ion-option>1994</ion-option>
+          <ion-option>2010</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <button ion-button full (click)="CalculateAll2()">Reslts</button>
+
+    <ion-item  class="item" color="dark"><p>{{TotalScore2}}</p></ion-item>
+
+  </ion-list>
+
+  <ion-list no-lines no padding *ngSwitchCase="'Science'">
+    <ion-item class="science">
+     SCIENCE
+    </ion-item> <br>
+    <ion-list>
+      <ion-item>
+        <ion-label color="dark">Question 1:  In Ohm's law the current ... to the voltage.</ion-label>
+        <ion-select [(ngModel)]="SC1">
+          <ion-option>adjacently proportional</ion-option>
+          <ion-option>indirectly proportional</ion-option>
+          <ion-option value="directly">directly prortional</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-label color="dark">Question 2: What is the core of an atom called?</ion-label>
+        <ion-select [(ngModel)]="SC2">
+          <ion-option>Neutron</ion-option>
+          <ion-option value="Nucleus">Nucleus</ion-option>
+          <ion-option>Ion</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    
+    <ion-list>
+      <ion-item>
+        <ion-label color="dark">Question 3: What is the boiling point of water?</ion-label>
+        <ion-select [(ngModel)]="SC3">
+          <ion-option value="100">100 degrees</ion-option>
+          <ion-option>120 degrees</ion-option>
+          <ion-option>150 degrees</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-label color="dark">Question 4: How many stages of matter are observable in everyday life?</ion-label>
+        <ion-select [(ngModel)]="SC4">
+          <ion-option>3</ion-option>
+          <ion-option value="4">4</ion-option>
+          <ion-option>7</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-label color="dark">Question 5: What is the gravitational acceleration on a free falling object?</ion-label>
+        <ion-select [(ngModel)]="SC5">
+          <ion-option value="9.8">9.8 meters per second squared</ion-option>
+          <ion-option> 10 meters per second squared</ion-option>
+          <ion-option> 12 meters per second squared</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+
+<button ion-button full (click)="CalculateAll3()">Reslts</button>
+
+<ion-item  class="item" color="dark"><p>{{TotalScore3}}</p></ion-item>
+ 
+
+  </ion-list>
+
+</div>
+
+
+    
+
 </ion-content>
